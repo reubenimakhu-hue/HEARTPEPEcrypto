@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$HEARTPEPE | Love Wins, Gains Follow</title>
+  <meta name="description" content="The cutest frog on Solana. 100% community, 0% rugs. Join the $HEARTPEPE army! 💚🐸"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <style>
+    :root {
+      --pepe: #00ff9d;
+      --pink: #ff4d9d;
+      --dark: #0a0a0a;
+      --grad: linear-gradient(135deg, var(--pepe), var(--pink));
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: var(--dark);
+      color: white;
+      overflow-x: hidden;
+    }
+    .glitch { 
+      animation: glitch 3s infinite; 
+      font-weight: 900;
+      text-shadow: 0 0 10px var(--pepe);
+    }
+    @keyframes glitch {
+      0%,100% { text-shadow: 2px 2px var(--pepe), -2px -2px var(--pink); }
+      50% { text-shadow: -2px -2px var(--pepe), 2px 2px var(--pink); }
+    }
+
+    /* HERO */
+    header {
+      min-height: 100vh;
+      background: var(--grad), url('https://i.ibb.co/2qQb5Yc/heartpepe-hero.png') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+    header::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(circle, transparent 30%, rgba(0,0,0,0.7));
+    }
+    .logo {
+      width: 180px; height: 180px;
+      border: 6px solid white;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 40px var(--pepe);
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    h1 {
+      font-size: 4.5rem;
+      margin: 1rem 0;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .ticker {
+      background: rgba(0,0,0,0.8);
+      padding: 1rem;
+      border-radius: 50px;
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      border: 2px solid var(--pepe);
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+    nav ul {
+      display: flex; justify-content: center; gap: 2rem; list-style: none;
+    }
+    nav a {
+      color: white; text-decoration: none; font-weight: 700;
+      transition: all 0.3s;
+    }
+    nav a:hover { color: var(--pepe); transform: translateY(-3px); }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+    #tokenomics { background: rgba(255,77,157,0.1); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 2px solid var(--pepe);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: all 0.4s;
+    }
+    .card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 20px 40px rgba(0,255,157,0.3);
+    }
+    .card i { font-size: 3rem; color: var(--pepe); margin-bottom: 1rem; }
+
+    /* CTA */
+    .cta {
+      background: var(--grad);
+      padding: 4rem 2rem;
+      clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+    }
+    .btn {
+      display: inline-block;
+      background: black;
+      color: var(--pepe);
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-decoration: none;
+      margin: 1rem;
+      box-shadow: 0 0 30px var(--pepe);
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+      background: white;
+    }
+
+    /* SOCIAL FLOAT */
+    .social-float {
+      position: fixed;
+      right: 20px; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 1rem;
+      z-index: 999;
+    }
+    .social-float a {
+      width: 50px; height: 50px;
+      background: var(--grad);
+      border-radius: 50%;
+      display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      transition: 0.3s;
+    }
+    .social-float a:hover { transform: scale(1.3); }
+
+    footer {
+      background: black;
+      padding: 3rem;
+      text-align: center;
+      border-top: 3px solid var(--pepe);
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      h1 { font-size: 3rem; }
+      .ticker { font-size: 1.2rem; }
+      nav ul { flex-wrap: wrap; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tokenomics">Tokenomics</a></li>
+      <li><a href="#roadmap">Roadmap</a></li>
+      <li><a href="#buy">Buy $HEARTPEPE</a></li>
+    </ul>
+  </nav>
+
+  <header id="home">
+    <img src="https://i.ibb.co/2qQb5Yc/heartpepe-hero.png" alt="$HEARTPEPE" class="logo">
+    <h1 class="glitch">$HEARTPEPE</h1>
+    <p class="ticker">💚 CA: <code style="background:rgba(255,255,255,0.2);padding:0.5rem 1rem;border-radius:10px;">HEARTPEPE...xyz</code> 💚</p>
+    <div>
+      <a href="#buy" class="btn">BUY NOW</a>
+      <a href="https://t.me/heartpepe" class="btn" target="_blank">TELEGRAM</a>
+    </div>
+  </header>
+
+  <section id="about">
+    <h2>Why $HEARTPEPE?</h2>
+    <p style="font-size:1.5rem;max-width:800px;margin:2rem auto;">
+      The frog that stole the internet’s heart. Born from pure meme magic, zero taxes, renounced contract, and a community that ships love faster than Elon tweets.
+    </p>
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-heart"></i>
+        <h3>100% Community</h3>
+        <p>Every holder is family. Airdrops, giveaways, and Pepe hugs daily.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-lock"></i>
+        <h3>Rug-Proof</h3>
+        <p>LP burnt, contract renounced, audited. Your bags are safer than Pepe’s lily pad.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-rocket"></i>
+        <h3>Moon Mission</h3>
+        <p>Tier-1 CEX listings incoming. 1000x is the floor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tokenomics">
+    <h2>Tokenomics</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>1,000,000,000</h3>
+        <p>Total Supply</p>
+      </div>
+      <div class="card">
+        <h3>0% Buy/Sell Tax</h3>
+        <p>Keep every sat.</p>
+      </div>
+      <div class="card">
+        <h3>90% LP</h3>
+        <p>Burnt at launch.</p>
+      </div>
+      <div class="card">
+        <h3>10% Marketing</h3>
+        <p>Raids, influencers, billboards on Mars.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap">
+    <h2>Roadmap</h2>
+    <div class="grid">
+      <div class="card">Phase 1<br>Launch + 10K holders</div>
+      <div class="card">Phase 2<br>CMC & CG fast-track</div>
+      <div class="card">Phase 3<br>NFT drop: Pepe in Love</div>
+      <div class="card">Phase 4<br>CEX + 1M MCAP party</div>
+    </div>
+  </section>
+
+  <div class="cta" id="buy">
+    <h2>Ready to Fall in Love?</h2>
+    <p style="font-size:2rem;margin:2rem 0;">Grab $HEARTPEPE on Raydium</p>
+    <a href="https://raydium.io/swap/?inputCurrency=sol&outputCurrency=HEARTPEPE...xyz" class="btn" target="_blank">
+      <i class="fas fa-shopping-cart"></i> BUY ON RAYDIUM
+    </a>
+    <br><br>
+    <a href="https://dexscreener.com/solana/heartpepe" class="btn" target="_blank">VIEW CHART</a>
+  </div>
+
+  <div class="social-float">
+    <a href="https://t.me/heartpepe" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a href="https://x.com/heartpepe" target="_blank"><i class="fab fa-x-twitter"></i></a>
+    <a href="https://heartpepe.com" target="_blank"><i class="fas fa-globe"></i></a>
+  </div>
+
+  <footer>
+    <p>© 2025 $HEARTPEPE. Made with 💚 by the frog army.</p>
+    <p>Contract: <code>HEARTPEPE...xyz</code></p>
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Live price ticker (replace with real API later)
+    setInterval(() => {
+      const price = (Math.random() * 0.0000005 + 0.0000001).toFixed(9);
+      document.querySelector('.ticker code').textContent = `$${price} SOL`;
+    }, 3000);
+  </script>
+</body>
+</html>
